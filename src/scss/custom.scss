@@ -1,0 +1,179 @@
+@import "variables";
+
+
+html {
+  font-size: 16px; }
+
+body {
+  font-size: 100%;
+  background-color: rgb(34, 29, 29);
+ }
+  
+/* Шапка страницы */
+
+
+  .header {
+    min-height: 76px;
+    background-color: $colordark ;
+    color: #fff;
+    h3 {
+      margin-bottom: 0;
+    }
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    .colorheader {
+      color: $color;
+    }
+    
+    .review {
+       width: 300px;
+       position: relative;
+    }
+
+    .logo {
+      height: 60px;
+      width: 60px;
+      background-image: url(../img/logo.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+    }
+
+
+    .logophone {
+      background-image: url(../img/logophone.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 50px;
+      height: 45px;
+      position: absolute;
+    }
+
+    @media (max-width: 767px) {
+      
+    }
+      
+    
+  }
+
+  .header_title {
+    margin-top: 40px;;
+  }
+  .flower {
+    position: fixed;
+    right: 0;
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    transform: rotate(350deg)
+   
+  }
+
+  .footer {
+    font-family: 'Lobster', cursive, Arial, Helvetica, sans-serif;
+    height: 200px;
+    h3 {
+      margin-top: 80px;;
+    }
+  }
+
+.gallery-container {
+  background-color: rgb(26, 24, 24);
+  margin-top: 100px;
+  min-height: 80vh;
+ }
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.875rem;
+  margin-top: 1.875rem;
+ }
+
+.gallery-thumbnail {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px; }
+
+.ion-search {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.25s ease-in-out; }
+  .ion-search:focus, .ion-search:hover {
+    color: #111; }
+
+.gallery-thumbnail:focus ~ .ion-search,
+.gallery-thumbnail:hover ~ .ion-search,
+.gallery-thumbnail ~ .ion-search:focus,
+.gallery-thumbnail ~ .ion-search:hover {
+  opacity: 1; }
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(21, 21, 21, 0.75); }
+
+.modal-body {
+  width: 57%;
+  overflow: hidden;
+  margin: 3.5vh auto;
+  padding-bottom: 35px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+   }
+
+@media (max-width: 810px) {
+  .modal-body {
+    width: 85%;
+    margin:14vh auto;
+  }
+}
+ 
+.img-responsive {
+  min-width: 100%;
+}
+
+.modal-close {
+  width: 16px;
+  height: 16px;
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: all 0.25s ease-in-out; }
+  .modal-close:focus, .modal-close:hover {
+    color: #111; }
+
+.ion-chevron-left, .ion-chevron-right {
+
+  width: 16px;
+  height: 16px;
+  position: fixed;
+  top: 50px;
+  font-size: 1.4rem;
+  color: #fff;
+  transition: all 0.25s ease-in-out; }
+  .ion-chevron-left:focus,.ion-chevron-right:focus,.ion-chevron-left:hover,.ion-chevron-right:hover {
+    color: #111; 
+
+}
+
+.ion-chevron-left {
+  left: 12px;
+}
+
+.ion-chevron-right {
+  right: 12px;
+}
