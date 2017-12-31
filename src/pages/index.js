@@ -1,6 +1,7 @@
 import React from 'react'
 import advantage from '../img/advantage.jpg'
 import phone from '../img/phone.jpg'
+import MySlider from '../components/MySlider'
 
 
 
@@ -82,8 +83,10 @@ class IndexPage extends React.Component {
          <div className="ourwork-slash center-block"></div>
       </div>
       <div className="container-fluid">
-        <div className="row ">
-                      
+        <div className="row slider">
+            <div className="col-xs-10 col-xs-offset-1">
+                  <MySlider/> 
+            </div>        
         </div>
       </div> 
 </div>  

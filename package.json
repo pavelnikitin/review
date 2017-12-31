@@ -12,6 +12,7 @@
     "node-sass": "^4.7.2",
     "react-burger-menu": "^2.1.11",
     "react-responsive-carousel": "^3.1.30",
+    "react-slick": "^0.16.0",
     "wow.js": "^1.2.2",
     "wowjs": "^1.1.3"
   },
