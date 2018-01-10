@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
+function validate(contactName, contactEmail, contactMessage) {
+  // true means invalid, so our conditions got reversed
+  return {
+    contactName: contactName.length === 0,
+    contactEmail: contactEmail.length === 0,
+    contactMessage: contactMessage.length === 0, 
+  };
+}
 
 class ContactForm extends Component {
   constructor() {
@@ -10,15 +18,29 @@ class ContactForm extends Component {
       contactEmail: '',
       contactMessage: '',
       message: '',
-      type: ''
-    };
+      type: '',
+      touched: {
+        contactName: false,
+        contactEmail: false,
+        contactMessage: false
+      }
+    }
+
+    
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleMessageChange = this.handleMessageChange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+  }
 
 
+
+  handleBlur = (field) => (evt) => {
+    this.setState({
+      touched: { ...this.state.touched, [field]: true },
+    });
   }
 
   handleNameChange(event) {
@@ -39,14 +61,25 @@ class ContactForm extends Component {
     });
   }
 
+  canBeSubmitted() {
+    const errors = validate(this.state.contactName, this.state.contactEmail, this.state.contactMessage);
+    const isDisabled = Object.keys(errors).some(x => errors[x]);
+    return !isDisabled;
+  }
+
   handleSubmit(event) {
+
+    if (!this.canBeSubmitted()) {
+      evt.preventDefault();
+      return;
+    }
 
     event.preventDefault();
     this.setState({ type: 'info', message: 'Sending…' });
 
     $.ajax({
 
-      url:  process.env.NODE_ENV !== "production" ? '../../mailer.php' : 'mailer.php',
+      url:  'mailer.php',
       type: 'POST',
       data: {
 
@@ -79,6 +112,15 @@ class ContactForm extends Component {
 
   render() {
 
+    const errors = validate(this.state.contactName, this.state.contactEmail, this.state.contactMessage);
+    const isDisabled = Object.keys(errors).some(x => errors[x])
+    const shouldMarkError = (field) => {
+      const hasError = errors[field];
+      const shouldShow = this.state.touched[field];
+      
+      return hasError ? shouldShow : false;
+    };
+
     if (this.state.type && this.state.message) {
       var classString = 'alert alert-' + this.state.type;
       var status = <div id="status" className={classString} >
@@ -91,19 +133,19 @@ class ContactForm extends Component {
       <h2>{status}</h2>
         <fieldset className="form-group">
           <label htmlFor="form_name">Name</label>
-          <input type="text" value={this.state.contactName} className="form-control" id="form_name" onChange={this.handleNameChange} />
+          <input className={shouldMarkError('contactName') ? "error" : ""} onBlur={this.handleBlur('contactName')} type="text" value={this.state.contactName}  id="form_name" onChange={this.handleNameChange} />
         </fieldset>
 
         <fieldset className="form-group">
           <label htmlFor="form_email">E-mail:</label>
-          <input name="email" value={this.state.contactEmail} className="form-control" id="form_email" type="email" onChange={this.handleEmailChange} />
+          <input className={shouldMarkError('contactEmail') ? "error" : ""} onBlur={this.handleBlur('contactEmail')} name="email" value={this.state.contactEmail}  id="form_email" type="email" onChange={this.handleEmailChange} />
         </fieldset>
 
         <fieldset className="form-group">
           <label htmlFor="form_msg">Message:</label>
-          <textarea name="message" value={this.state.contactMessage} className="form-control" id="form_msg" onChange={this.handleMessageChange} ></textarea>
+          <textarea className={shouldMarkError('contactMessage') ? "error" : ""} onBlur={this.handleBlur('contactMessage')} name="message" value={this.state.contactMessage}  id="form_msg" onChange={this.handleMessageChange} ></textarea>
         </fieldset>
-        <button type="submit" value="Submit" className="btn--cta" id="btn-submit" />
+        <button disabled={isDisabled} type="submit" value="Submit" className="btn--cta" id="btn-submit" />
 
       </form>
     );

@@ -8,7 +8,7 @@ import viber from '../img/viber.png'
 import whatsapp from '../img/whatsapp.png'
 import telefon from '../img/telefon.png'
 import gmail from '../img/gmail.png'
-import ContactForm1 from '../components/contactform1'
+import ContactForm from '../components/contactform'
 
 
 class IndexPage extends React.Component {
@@ -233,7 +233,7 @@ class IndexPage extends React.Component {
             <div className="contacts-overlay">
                 <h1>Остались вопросы? Свяжитесь с нами!</h1>
                 <div className="contacts-form col-xs-12 col-sm-4 col-sm-offset-1">
-                    <ContactForm1/>
+                    <ContactForm/>
                 </div>
                 <div className="contacts-viber col-xs-12 col-sm-6">
                     <div className="row contacts-phone text-right">
