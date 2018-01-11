@@ -13,7 +13,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
    
-    <div className="container-fluid">
+    <div id= "wrapper" className="container-fluid">
       <div className="row header">
         <div className="col-xs-12 col-sm-6 text-center">
           <div className="review center-block">

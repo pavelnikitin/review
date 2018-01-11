@@ -1,35 +1,18 @@
-form input {
-  display: block;
-  width: 100%;
-  font-size: 20px;
-  padding: 5px 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
 
-form input.error, textarea.error {
-  border: 2px solid red
-}
-
-form button {
-  display: block;
-  width: 100%;
-  appearance: none;
-  border-radius: 5px;
-  background-color: #84c00c;
+label.control-label {
   color: #fff;
-  border: none;
-  font-size: 16px;
-  height: 40px;
-  margin-top: 30px;
+  margin-right: 10px;
 }
 
-form button:hover {
-  background-color: #669509;
-}
 
-form button:disabled {
-  background-color: #dbf99f;
-  color: #333;
+
+.btn-primary {
+  color: #fff !important;
+  background-color: $color !important;
+  border-color: #fff !important;
+  &:hover, &:focus {
+    background-color: $colortext !important;
+    color: #fff !important;
+    outline: none !important;
+  }
 }
