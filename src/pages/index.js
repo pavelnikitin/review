@@ -9,7 +9,7 @@ import whatsapp from '../img/whatsapp.png'
 import telefon from '../img/telefon.png'
 import gmail from '../img/gmail.png'
 import ContactForm from '../components/contactform'
-import ContactModal from '../components/contactmodal'
+import MyModal from '../components/mymodal'
 
 
 
@@ -146,10 +146,7 @@ class IndexPage extends React.Component {
                           <h5>из вашего региона</h5>
                         </div>
                         <div className="send center-block">
-                        <ContactModal/>
-                          <a data-toggle="modal" data-target="#feedbackForm1">
-                            <h3 className="colorheader">Отправить заявку</h3>
-                          </a>
+                           <MyModal/>
                         </div>
                         <h5 className="copyright">Услуги копирайтера включены</h5>
                       </div>
@@ -237,7 +234,7 @@ class IndexPage extends React.Component {
             <div className="contacts-overlay">
                 <h1>Остались вопросы? Свяжитесь с нами!</h1>
                 <div className="contacts-form col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
-                    <ContactForm/>
+                    <ContactForm url= {'mailer.php'}/>
                 </div>
                 <div className="contacts-viber col-xs-12 col-sm-6">
                     <div className="row contacts-phone text-right">

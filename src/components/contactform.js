@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import Notifications, {notify} from 'react-notify-toast';
+import 'rc-notification/assets/index.css';
+import Notification from 'rc-notification';
+
+let notification = null;
+Notification.newInstance({}, (n) => notification = n);
 
 function validate(contactName, contactEmail, contactMessage) {
   // true means invalid, so our conditions got reversed
@@ -23,8 +27,30 @@ class ContactForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleMessageChange = this.handleMessageChange.bind(this); 
+    this.handleMessageChange = this.handleMessageChange.bind(this);
+    this.errorFn = this.errorFn.bind(this); 
+    this.successFn = this.successFn.bind(this); 
+    
+     
+     
   }
+
+   errorFn() {
+    notification.notice({
+      content: <span>Извините, произошла ошибка при отправке</span>,
+      style: { 'top': '10vw', 'right': '25vw','background': '#e4343493',
+      'color': '#fff'} 
+    });
+  }
+
+  successFn() {
+    notification.notice({
+      content: <span>Ваше сообщение отправлено, спасибо.</span>,
+      style: { 'top': '10vw', 'right': '25vw','background': '#36eb4e93',
+      'color': '#fff'}
+    });
+  }
+
 
   handleNameChange(event) {
     this.setState({
@@ -58,11 +84,14 @@ class ContactForm extends Component {
     }
 
     event.preventDefault();
+
+    let url = this.props.url
+
     this.setState({ type: 'info', message: 'Sending…' });
 
     $.ajax({
 
-      url:  'mailer.php',
+      url:  url,
       type: 'POST',
       data: {
 
@@ -78,15 +107,16 @@ class ContactForm extends Component {
           contactEmail: '',
           contactMessage: '',
         });
-
-        let successColor = { background: 'rgba(64, 214, 67, 0.8);', text: "#FFFFFF" };
-        notify.show('Ваше сообщение доставлено, спасибо!', 'custom', 3000, successColor);
+        
+        successFn() 
+        
 
       }.bind(this),
 
       error: function (xhr, status, err) {
-        let errorColor = { background: 'rgba(255, 87, 34, 0.8)', text: "#FFFFFF" };
-        notify.show('Извините,произошла ошибка при отправке!', 'custom', 3000, errorColor);
+
+       this.errorFn()
+        
       }.bind(this)
 
     });
@@ -102,11 +132,10 @@ class ContactForm extends Component {
     return (
       
       <form id="contactForm" method="POST" action="mailer.php" onSubmit={this.handleSubmit}>
-      <Notifications />
         <fieldset className="form-group">
           <input   type="text" className="form-control" placeholder="Введите ваше имя" value={this.state.contactName}  id="form_name" onChange={this.handleNameChange} />
         </fieldset>
-
+        
         <fieldset className="form-group">
           <input  name="email" className="form-control"  placeholder="Введите ваш email"  value={this.state.contactEmail}  id="form_email" type="email" onChange={this.handleEmailChange} />
         </fieldset>
@@ -115,7 +144,9 @@ class ContactForm extends Component {
           <textarea name="message" className="form-control"  placeholder="Введите сообщение" value={this.state.contactMessage}  id="form_msg" onChange={this.handleMessageChange} ></textarea>
         </fieldset>
         <button disabled={isDisabled} type="submit" value="Submit"  className="btn btn-primary pull-right" id="btn-submit" > отправить</button>
-      </form>
+        
+        </form>
+
       
     );
   }

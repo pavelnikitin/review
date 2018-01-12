@@ -1,1 +1,25 @@
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.panel-heading {
+    color: $colortext !important;
+    background-color: $color !important;
+    border-color: #ebee3b !important;
+}
+
+.btn-primary {
+    color: $colortext !important;
+    background-color: $color !important;
+    border-color: #ebee3b !important;
+}
+
+.panel-info {
+    border-color: $color !important;
+}
+
+.modal-content {
+    width: 66.6% !important;
+    margin: 0 auto;
+}
 
