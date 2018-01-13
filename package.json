@@ -18,6 +18,8 @@
     "react-modal": "^3.1.10",
     "react-notify-toast": "^0.4.0",
     "react-responsive-carousel": "^3.1.30",
+    "react-scroll-to-component": "^1.0.2",
+    "react-scrollchor": "^4.2.1",
     "react-slick": "^0.16.0",
     "slick-carousel": "^1.8.1",
     "wow.js": "^1.2.2",

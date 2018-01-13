@@ -32,17 +32,20 @@ class IndexPage extends React.Component {
     return (
       
       <div className=" row">
-        <div className="banner row">
-          <div className="banner-background row text-center">
-            <div className="banner-girl"></div>
-            <h1 className="colorheader">
+      <div className="banner row">
+      <div className="banner-background row text-center">
+          <div className="banner-girl"></div>
+          <h1 className="colorheader">
               <div className="banner-conversion">Рост конверсии до 20%</div>
               Отзывы на заказ
-              </h1>
-            <div className="banner-overlay"></div>
-          </div>
-        </div>
-        <div className="row advantage text-center">
+          </h1>
+          <h4>
+              СНИМУТ ВОЗРАЖЕНИЯ КЛИЕНТОВ
+              <br/> И УВЕЛИЧАТ ДОВЕРИЕ К ВАМ</h4>
+          <div className="banner-overlay"></div>
+      </div>
+  </div>
+        <div className="row advantage text-center" id="1" >
           <h1>ПРЕИМУЩЕСТВА ОТЗЫВОВ</h1>
           <div className="col-xs-12 ">
             <div className="slash center-block"></div>
@@ -66,7 +69,7 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row wholeft text-center">
+        <div className="row wholeft text-center" id="2">
           <h1>КТО ЖЕ ОСТАВИТ ОТЗЫВ?</h1>
           <div className="col-xs-12 ">
             <div className="simple-slash center-block"></div>
@@ -84,7 +87,7 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row ourwork text-center">
+        <div className="row ourwork text-center" id="3">
           <h1>НАШИ РАБОТЫ</h1>
           <div className="col-xs-12 ">
             <div className="slash center-block"></div>
@@ -96,7 +99,7 @@ class IndexPage extends React.Component {
           </div>
         </div>
 
-        <div className="row result text-center">
+        <div className="row result text-center" id="4">
           <h1>РЕЗУЛЬТАТ НАШЕГО КЛИЕНТА В СВОЕЙ НИШЕ</h1>
           <div className="col-xs-12 ">
             <div className="simple-slash center-block"></div>
@@ -125,7 +128,7 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row result text-center">
+        <div className="row result text-center" id="5">
           <h1>ТАРИФНЫЕ ПЛАНЫ</h1>
           <div className="col-xs-12 ">
             <div className="slash center-block"></div>
@@ -146,7 +149,7 @@ class IndexPage extends React.Component {
                           <h5>из вашего региона</h5>
                         </div>
                         <div className="send center-block">
-                           <MyModal/>
+                           <MyModal heading= 'Тариф начальный'/>
                         </div>
                         <h5 className="copyright">Услуги копирайтера включены</h5>
                       </div>
@@ -164,9 +167,7 @@ class IndexPage extends React.Component {
                           <h5>из вашего региона</h5>
                         </div>
                         <div className="send center-block">
-                          <a data-toggle="modal" data-target="#feedbackForm2">
-                            <h3 className="colorheader">Отправить заявку</h3>
-                          </a>
+                            <MyModal heading= 'Тариф стандартный'/>
                         </div>
                         <h5 className="copyright">Услуги копирайтера включены</h5>
                       </div>
@@ -184,9 +185,7 @@ class IndexPage extends React.Component {
                           <h5>из вашего региона</h5>
                         </div>
                         <div className="send center-block">
-                          <a data-toggle="modal" data-target="#feedbackForm3">
-                            <h3 className="colorheader">Отправить заявку</h3>
-                          </a>
+                            <MyModal heading= 'Тариф премиум'/>
                         </div>
                         <h5 className="copyright">Услуги копирайтера включены</h5>
                       </div>
@@ -205,16 +204,10 @@ class IndexPage extends React.Component {
                     <div className="video-description  center-block">
                       <h5>В некоторых нишах - этот отличный инструмент. Он показывает, что у вас хороший опыт работы
                                     и много довольных клиентов.</h5>
-                      <div className="send center-block">
-                        <a data-toggle="modal" data-target="#modal" >
-                          <h3 className="video-example colorheader">Показать пример</h3>
-                        </a>
-                      </div>
+                      
                     </div>
                     <div className="center-block send">
-                      <a data-toggle="modal" data-target="#feedbackForm4">
-                        <h3 className="colorheader">Мне это подходит</h3>
-                      </a>
+                        <MyModal heading= 'Заказать видеоотзывы'/>
                     </div>
                   </div>
                 </div>
@@ -223,14 +216,7 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className ="row feedback text-center">
-          <h1>ВАМ НЕ НУЖНЫ СТАНДАРТНЫЕ ОТЗЫВЫ ?</h1>
-          <h3>Напишите нам и мы постараемся вам помочь</h3>
-          <a data-toggle="modal" data-target="#feedbackForm5">
-            <button className ="feedback-button">Обратная связь</button>
-          </a>
-        </div>
-        <div className="row contacts text-center">
+        <div className="row contacts text-center" id="6">
             <div className="contacts-overlay">
                 <h1>Остались вопросы? Свяжитесь с нами!</h1>
                 <div className="contacts-form col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
@@ -239,21 +225,20 @@ class IndexPage extends React.Component {
                 <div className="contacts-viber col-xs-12 col-sm-6">
                     <div className="row contacts-phone text-right">
                         <div className="col-xs-12 ">
-                            <h3>+7 929 165 91 29
+                            <h3><div className="phonenumber">+7 555 555 55 55</div>
                                 <img src={telefon} alt="telefon" className="telefon"/>
                                 <img src={whatsapp} alt="whatsapp" className="whatsapp"/>
                                 <img src={viber} alt="viber" className="viber"/>
                             </h3>
-                            <h3>sales@otziv-na-zakaz.ru
+                            <h3>example@email.com
                                 <img src={gmail} alt="gmail" className="gmail"/>
                             </h3>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-        </div>
+    </div>
         
 
       

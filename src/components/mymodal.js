@@ -37,7 +37,7 @@ export default class MyModal extends React.Component {
 					<div className="row">
 					<div className="panel panel-info">
 						<div className="panel-heading">
-							<h2 className="h3 panel-title text-center">Выбрать тариф "Начальный"</h2>
+							<h2 className="h3 panel-title text-center">{this.props.heading}</h2>
 						</div>
 						<div className="panel-body">
 							<ContactForm url={'mailer.php'}/>
