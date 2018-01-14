@@ -3,7 +3,7 @@
 @import "contactform";
 @import "contactmodal";
 @import "rc-notification";
-@import "navbar";
+@import "mynavbar";
 
 
 
@@ -50,7 +50,7 @@ body {
 
   .header {
     min-height: 76px;
-    margin-top: 55px;
+    margin-top: 40px;
     background-color: $colordark ;
     color: #fff;
     h4 {

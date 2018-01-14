@@ -1,44 +1,69 @@
-import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import React, { Component } from 'react'
+import ResponsiveMenu from 'react-responsive-navbar';
+import styled from 'styled-components';
 import Scrollchor from 'react-scrollchor';
 
-class MyNavbar extends Component {
+const Menu = styled.div`
+  border-bottom: 2px solid MediumPurple;
+  position: fixed;
+  z-index: 2000;
+  width: 100%;
+  background-color: #fff;
+  ul {
+    padding: 0;
+  }
+  li {
+    display: inline;
+    font-size: 13px;
+    list-style-type: none;
+    margin-left: 30px;
+  }
+  
+  @media (max-width: 500px) {
+    padding: 10px 0;
+    li {
+      padding: 10px 0;
+      display: block;
+      margin-left: 0;
+    }
+  }
+`;
+
+
+
+
+
+export default class MyNavbar extends Component {
     render() {
         return (
             <div>
-            <Navbar fixedTop={true}  collapseOnSelect>
-            <Navbar.Header>
-                <Navbar.Brand>
-                     <Scrollchor to="#0" className="nav-link"><i  className = 'icon ion-arrow-up-a'></i></Scrollchor>
-                </Navbar.Brand>
-                <Navbar.Toggle />
-            </Navbar.Header>
-            <Navbar.Collapse>
-                <Nav pullRight>
-                    <NavItem eventKey={1} href="#">
-                        <Scrollchor to="#1" className="nav-link">Преимущества</Scrollchor>
-                    </NavItem>
-                    <NavItem eventKey={2} href="#">
-                         <Scrollchor to="#2" className="nav-link">Об отзывах</Scrollchor>
-                    </NavItem>
-                    <NavItem eventKey={2} href="#">
-                         <Scrollchor to="#3" className="nav-link">Наши работы</Scrollchor>
-                    </NavItem>
-                    <NavItem eventKey={2} href="#">
-                        <Scrollchor to="#4" className="nav-link">Результат</Scrollchor>
-                    </NavItem>
-                    <NavItem eventKey={2} href="#">
-                       <Scrollchor to="#5" className="nav-link">Тарифы</Scrollchor>
-                    </NavItem>
-                    <NavItem eventKey={2} href="#">
-                         <Scrollchor to="#6" className="nav-link">Контакты</Scrollchor>
-                    </NavItem>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+            <ResponsiveMenu
+          menuOpenButton={<div className="openbutton"><i className="ion-navicon-round"/></div>}
+          menuCloseButton={<div className="closebutton"></div>}
+          changeMenuOn="500px"
+          menu={
+            <Menu>
+              <ul>
+                <li>
+                   <Scrollchor animate={{duration: 600}} to="#_0" className="nav-link"><i className="ion-ios-home"/></Scrollchor>
+                </li>
+                <li>
+                <Scrollchor animate={{duration: 600}}  to="#_1" className="nav-link">Преимущества</Scrollchor>
+                </li>
+                <li>
+                <Scrollchor animate={{duration: 600}}  to="#_2" className="nav-link">Об отзывах</Scrollchor>
+                </li>
+                <li>
+                  <a href="">Contact</a>
+                </li>
+                <li>
+                  <a href="">News</a>
+                </li>
+              </ul>
+            </Menu>
+          }
+        />
             </div>
-        );
+        )
     }
 }
-
-export default MyNavbar;

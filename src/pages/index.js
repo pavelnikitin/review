@@ -31,8 +31,8 @@ class IndexPage extends React.Component {
 
     return (
       
-      <div className=" row">
-      <div className="banner row">
+      <div>
+      <div className="banner ">
       <div className="banner-background row text-center">
           <div className="banner-girl"></div>
           <h1 className="colorheader">
@@ -45,7 +45,7 @@ class IndexPage extends React.Component {
           <div className="banner-overlay"></div>
       </div>
   </div>
-        <div className="row advantage text-center" id="1" >
+        <div className="row advantage text-center" id="_1" >
           <h1>ПРЕИМУЩЕСТВА ОТЗЫВОВ</h1>
           <div className="col-xs-12 ">
             <div className="slash center-block"></div>
@@ -69,7 +69,7 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row wholeft text-center" id="2">
+        <div className="row wholeft text-center" id="_2">
           <h1>КТО ЖЕ ОСТАВИТ ОТЗЫВ?</h1>
           <div className="col-xs-12 ">
             <div className="simple-slash center-block"></div>

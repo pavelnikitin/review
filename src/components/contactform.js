@@ -21,25 +21,23 @@ class ContactForm extends Component {
       contactName: '',
       contactEmail: '',
       contactMessage: '',
-  
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleMessageChange = this.handleMessageChange.bind(this);
     this.errorFn = this.errorFn.bind(this); 
-    this.successFn = this.successFn.bind(this); 
-    
-     
-     
+    this.successFn = this.successFn.bind(this);    
   }
 
-  componentDidMount() {
-    let notification = null;
-    Notification.newInstance({}, (n) => notification = n);
-  }
+    
+    
+  
 
    errorFn() {
+    let notification = null;
+    Notification.newInstance({}, (n) => notification = n);
     notification.notice({
       content: <span>Извините, произошла ошибка при отправке</span>,
       style: { 'top': '10vw', 'right': '25vw','background': '#e4343493',
@@ -48,6 +46,8 @@ class ContactForm extends Component {
   }
 
   successFn() {
+    let notification = null;
+    Notification.newInstance({}, (n) => notification = n); 
     notification.notice({
       content: <span>Ваше сообщение отправлено, спасибо.</span>,
       style: { 'top': '10vw', 'right': '25vw','background': '#36eb4e93',
