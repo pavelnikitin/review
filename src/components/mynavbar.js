@@ -9,7 +9,7 @@ class MyNavbar extends Component {
             <Navbar fixedTop={true}  collapseOnSelect>
             <Navbar.Header>
                 <Navbar.Brand>
-                     <Scrollchor to="#0" className="nav-link">Отзывы на заказ</Scrollchor>
+                     <Scrollchor to="#0" className="nav-link"><i  className = 'icon ion-arrow-up-a'></i></Scrollchor>
                 </Navbar.Brand>
                 <Navbar.Toggle />
             </Navbar.Header>

@@ -3,8 +3,7 @@ import $ from 'jquery';
 import 'rc-notification/assets/index.css';
 import Notification from 'rc-notification';
 
-let notification = null;
-Notification.newInstance({}, (n) => notification = n);
+
 
 function validate(contactName, contactEmail, contactMessage) {
   // true means invalid, so our conditions got reversed
@@ -33,6 +32,11 @@ class ContactForm extends Component {
     
      
      
+  }
+
+  componentDidMount() {
+    let notification = null;
+    Notification.newInstance({}, (n) => notification = n);
   }
 
    errorFn() {
@@ -108,7 +112,7 @@ class ContactForm extends Component {
           contactMessage: '',
         });
         
-        successFn() 
+        this.successFn() 
         
 
       }.bind(this),

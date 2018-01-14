@@ -45,10 +45,12 @@ body {
 }
 
 /* Шапка страницы */
+  
 
 
   .header {
     min-height: 76px;
+    margin-top: 55px;
     background-color: $colordark ;
     color: #fff;
     h4 {

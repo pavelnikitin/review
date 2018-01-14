@@ -7274,6 +7274,12 @@ scroll-behavior@^0.9.1:
     dom-helpers "^3.2.1"
     invariant "^2.2.2"
 
+scroll-to-element@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/scroll-to-element/-/scroll-to-element-2.0.0.tgz#3467330e3384743b7295ac64b30279990c5ac164"
+  dependencies:
+    scroll-to "0.0.2"
+
 scroll-to@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/scroll-to/-/scroll-to-0.0.2.tgz#936d398a9133660a2492145c2c0081dfcb0728f3"
