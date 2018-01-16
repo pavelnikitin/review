@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import MyNavbar from '../components/mynavbar'
+import MyMenu from '../components/mymenu'
 import './../scss/index.scss'
 
 const TemplateWrapper = ({ children }) => (
@@ -16,7 +16,7 @@ const TemplateWrapper = ({ children }) => (
 
     <div id="wrapper" className="container-fluid">
     <div className="row" id="_0">
-     <MyNavbar/>
+     
     </div>
       <div className="row header">
         <div className="col-xs-12 col-sm-6 text-center">
