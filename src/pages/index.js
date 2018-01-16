@@ -37,11 +37,11 @@ class IndexPage extends React.Component {
           <div className="banner-girl"></div>
           <h1 className="colorheader">
               <div className="banner-conversion">Рост конверсии до 20%</div>
-              Отзывы на заказ
+              Результативное продвижение
           </h1>
           <h4>
-              СНИМУТ ВОЗРАЖЕНИЯ КЛИЕНТОВ
-              <br/> И УВЕЛИЧАТ ДОВЕРИЕ К ВАМ</h4>
+              СДЕЛАЕМ БЕСПЛАТНЫЙ 
+              <br/> АУДИТ САЙТА</h4>
           <div className="banner-overlay"></div>
       </div>
   </div>

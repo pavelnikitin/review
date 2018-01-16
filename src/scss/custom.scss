@@ -4,16 +4,7 @@
 @import "contactmodal";
 @import "rc-notification";
 @import "rc-notification";
-
-
-
-
-
-
-
-
-
-
+@import "mynavbar";
 
 
 html {
@@ -54,7 +45,7 @@ body {
   .header {
     min-height: 76px;
     margin-top: 40px;
-    background-color: $colordark ;
+    background-color: $colorblock ;
     color: #fff;
     h4 {
       margin-bottom: 0;
@@ -71,13 +62,13 @@ body {
     }
 
     .logo {
-      height: 60px;
-      width: 60px;
+      height: 75px;
+      width: 75px;
       background-image: url(../img/logo.png);
       background-repeat: no-repeat;
       background-size: contain;
       position: absolute;
-      bottom: -4px;
+      bottom: -16px;
       left:-7px;
     }
 
@@ -86,19 +77,27 @@ body {
       background-image: url(../img/logophone.png);
       background-repeat: no-repeat;
       background-size: contain;
-      width: 50px;
-      height: 45px;
+      width: 45px;
+      height: 40px;
       position: absolute;
       left: 30px;
     }   
     @media (max-width: 800px){
       .logophone {
-        left: 14px;
-        top:-10px;
+        left: 8px;
+        top: 5px;
+        width: 30px;
+        height: 25px;
       }
 
       h4 {
        font-size: 16px;
+      }
+
+      .logo {
+      height: 40px;
+      width: 40px;
+      top:-5px;
       }
     }
     
@@ -120,7 +119,7 @@ body {
       position: relative;
     
       h1 {
-        color: $color;
+        color: #fff;
         text-transform: uppercase;
         font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
         font-size: 44px;
