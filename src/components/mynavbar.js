@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import ResponsiveMenu from 'react-responsive-navbar';
 import styled from 'styled-components';
-import Scrollchor from 'react-scrollchor';
+import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
+const durationFn = function(deltaTop) {
+    return deltaTop;
+};
 
 const Menu = styled.div`
-  border-bottom: 2px solid MediumPurple;
   position: fixed;
   z-index: 2000;
   width: 100%;
@@ -34,30 +37,90 @@ const Menu = styled.div`
 
 
 export default class MyNavbar extends Component {
+
+  constructor (props){
+    super(props);
+    this.scrollToTop = this.scrollToTop.bind(this);
+}
+
+componentDidMount() {
+
+  Events.scrollEvent.register('begin', function() {
+    
+  });
+
+  Events.scrollEvent.register('end', function() {
+   
+  });
+
+}
+scrollToTop() {
+  scroll.scrollToTop();
+}
+scrollTo() {
+  scroller.scrollTo('scroll-to-element', {
+    duration: 800,
+    delay: 0,
+    smooth: 'easeInOutQuart'
+  })
+}
+scrollToWithContainer() {
+
+  let goToContainer = new Promise((resolve, reject) => {
+
+    Events.scrollEvent.register('end', () => {
+      resolve();
+      Events.scrollEvent.remove('end');
+    });
+
+    scroller.scrollTo('scroll-container', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+    });
+
+  });
+
+  goToContainer.then(() =>  
+      scroller.scrollTo('scroll-container-second-element', {
+          duration: 800,
+          delay: 0,
+          smooth: 'easeInOutQuart',
+          containerId: 'scroll-container'
+      }));
+}
+componentWillUnmount() {
+  Events.scrollEvent.remove('begin');
+  Events.scrollEvent.remove('end');
+}
+
     render() {
         return (
             <div>
             <ResponsiveMenu
           menuOpenButton={<div className="openbutton"><i className="ion-navicon-round"/></div>}
           menuCloseButton={<div className="closebutton"></div>}
-          changeMenuOn="500px"
+          changeMenuOn="800px"
           menu={
-            <Menu>
+            <Menu className="row">
               <ul>
                 <li>
-                   <Scrollchor animate={{duration: 600}} to="#_0" className="nav-link"><i className="ion-ios-home"/></Scrollchor>
+                <Link activeClass="active" className="test1" to="_0" spy={true} smooth={true} duration={500} ><i className="ion-ios-home"/></Link>
                 </li>
                 <li>
-                <Scrollchor animate={{duration: 600}}  to="#_1" className="nav-link">Преимущества</Scrollchor>
+                <Link activeClass="active" className="test1" to="_1" spy={true} smooth={true} duration={500} >Услуги</Link>
                 </li>
                 <li>
-                <Scrollchor animate={{duration: 600}}  to="#_2" className="nav-link">Об отзывах</Scrollchor>
+                <Link activeClass="active" className="test1" to="_3" spy={true} smooth={true} duration={500} >Наши работы</Link>
                 </li>
                 <li>
-                  <a href="">Contact</a>
+                <Link activeClass="active" className="test1" to="_4" spy={true} smooth={true} duration={500} >Отзыв о нас</Link>
                 </li>
                 <li>
-                  <a href="">News</a>
+                <Link activeClass="active" className="test1" to="_5" spy={true} smooth={true} duration={500} >Тарифные планы</Link>
+                </li>
+                <li>
+                <Link activeClass="active" className="test1" to="_6" spy={true} smooth={true} duration={500} >Обратная связь</Link>
                 </li>
               </ul>
             </Menu>

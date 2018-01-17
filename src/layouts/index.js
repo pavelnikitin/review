@@ -14,7 +14,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
 
-    <div id="wrapper" className="container-fluid">
+    <div id="" className="">
     <div className="row" id="_0">
      <MyNavbar/>
     </div>

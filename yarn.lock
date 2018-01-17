@@ -6685,6 +6685,12 @@ react-scroll-to-component@^1.0.2:
   dependencies:
     scroll-to "0.0.2"
 
+react-scroll@^1.7.6:
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.7.6.tgz#826102e6a9de30142cd8450f190b0fed87171ff6"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-scrollchor@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/react-scrollchor/-/react-scrollchor-4.2.1.tgz#0fe5f63ac4bcfcf5775bec942d87d7192953b29d"

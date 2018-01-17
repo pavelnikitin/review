@@ -5,13 +5,13 @@ input:-webkit-autofill {
 .panel-heading {
     color: $colortext !important;
     background-color: $color !important;
-    border-color: #ebee3b !important;
+    border-color: $color !important;
 }
 
 .btn-primary {
-    color: $colortext !important;
+    color: #fff !important;
     background-color: $color !important;
-    border-color: #ebee3b !important;
+    border-color: $color !important;
 }
 
 .panel-info {

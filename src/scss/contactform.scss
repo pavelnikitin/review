@@ -11,7 +11,7 @@ label.control-label {
   background-color: $color !important;
   border-color: #fff !important;
   &:hover, &:focus {
-    background-color: $colortext !important;
+    background-color: $colorhover !important;
     color: #fff !important;
     outline: none !important;
   }
