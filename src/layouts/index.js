@@ -14,8 +14,8 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
 
-    <div id="" className="">
-    <div className="row" id="_0">
+    <div>
+    <div className="row topheader">
      <MyNavbar/>
     </div>
       <div className="row header">
@@ -39,6 +39,8 @@ const TemplateWrapper = ({ children }) => (
       <div className="copy row text-center ">
         <h5>Copyright © Nikitin Pavel
           <br /> 2018
+          <br/> Данные используемые для сайта служат только в целях демонстрации,
+          любые совпадения носят случайный характер.
 
       </h5>
       </div>

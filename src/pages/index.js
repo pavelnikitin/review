@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
     return (
       
       <div>
-      <div className="banner">
+      <div className="banner" id="home">
       <div className="banner-background row text-center">
           <div className="banner-girl"></div>
           <h1 className="colorheader">
@@ -79,7 +79,7 @@ class IndexPage extends React.Component {
               <div className="col-xs-6 prepare-image">
                 <img src={phone} alt="" className="img-responsive" />
               </div>
-              <div className="col-xs-6 prepare-description">
+              <div className="col-xs-6  prepare-description">
                 <div className="prepare-text">
                   <span>Наши отзывы готовит группа сотрудников с различным стилем речи и написания текста. Все тексты отзывов создаются индивидуально для каждого проекта с уникальностью не менее 95%. Именно такие тексты вызывают доверие других пользователей.</span>
                 </div>
@@ -107,7 +107,7 @@ class IndexPage extends React.Component {
           <div className="container-fluid">
             <div className="row result-description">
               <div className="col-xs-2">
-                <img src={resultimage} alt="image" className="result-image img-responsive" />
+                <img src={resultimage} alt="image" className="img-responsive img-circle result-image" />
               </div>
               <div className="col-xs-10 result-text">
                 <span>
@@ -143,15 +143,15 @@ class IndexPage extends React.Component {
                         <h3>«НАЧАЛЬНЫЙ»</h3>
                         <h2>
                           <span className="colorheader">10 000 </span> руб</h2>
-                        <h5>50 отзывов</h5>
-                        <h5 className="unicip">Уникальные ip</h5>
+                        <h5>20 отзывов</h5>
+                        <h5 className="unicip">Экспресс анализ SEO</h5>
                         <div className="region center-block">
-                          <h5>из вашего региона</h5>
+                          <h5>---------</h5>
                         </div>
                         <div className="send center-block">
                            <MyModal heading= 'Тариф начальный'/>
                         </div>
-                        <h5 className="copyright">Услуги копирайтера включены</h5>
+                        <h5 className="copyright"></h5>
                       </div>
                     </div>
                   </div>
@@ -161,15 +161,15 @@ class IndexPage extends React.Component {
                         <h3>«СТАНДАРТНЫЙ»</h3>
                         <h2>
                           <span className="colorheader">17 000 </span>руб</h2>
-                        <h5>100 отзывов</h5>
-                        <h5 className="unicip">Уникальные ip</h5>
+                        <h5>50 отзывов</h5>
+                        <h5 className="unicip">Экспресс анализ SEO</h5>
                         <div className="region center-block">
-                          <h5>из вашего региона</h5>
+                          <h5>Анализ контекстной рекламы</h5>
                         </div>
                         <div className="send center-block">
                             <MyModal heading= 'Тариф стандартный'/>
                         </div>
-                        <h5 className="copyright">Услуги копирайтера включены</h5>
+                        <h5 className="copyright"></h5>
                       </div>
                     </div>
                   </div>
@@ -179,15 +179,15 @@ class IndexPage extends React.Component {
                         <h3>«ПРЕМИУМ»</h3>
                         <h2>
                           <span className="colorheader">30 000</span> руб</h2>
-                        <h5>200 отзывов</h5>
-                        <h5 className="unicip">Уникальные ip</h5>
+                        <h5>100 отзывов</h5>
+                        <h5 className="unicip">Все услуги</h5>
                         <div className="region center-block">
-                          <h5>из вашего региона</h5>
+                          <h5> + Бонусы!</h5>
                         </div>
                         <div className="send center-block">
                             <MyModal heading= 'Тариф премиум'/>
                         </div>
-                        <h5 className="copyright">Услуги копирайтера включены</h5>
+                        <h5 className="copyright"></h5>
                       </div>
                     </div>
                   </div>
@@ -200,7 +200,7 @@ class IndexPage extends React.Component {
                     <img src={newpng} alt="logo" className="img-responsive" />
                     <h3>10 ВИДЕО ОТЗЫВОВ</h3>
                     <h2>
-                      <span className="colorheader">15 000</span> руб</h2>
+                      <span className="colorheader">5 000</span> руб</h2>
                     <div className="video-description  center-block">
                       <h5>В некоторых нишах - этот отличный инструмент. Он показывает, что у вас хороший опыт работы
                                     и много довольных клиентов.</h5>

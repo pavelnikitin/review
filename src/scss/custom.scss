@@ -41,10 +41,17 @@ body {
 /* Шапка страницы */
   
 
-
+   .topheader {
+     height: 50px;
+     position: fixed;
+     width: 103%;
+     top: 0;
+     z-index: 2002;
+     background-color: #fff;
+   }
   .header {
     min-height: 76px;
-    margin-top: 40px;
+    margin-top: 50px;
     background-color: $colorblock ;
     color: #fff;
     h4 {
@@ -57,6 +64,7 @@ body {
     
     .review {
        width: 300px;
+       margin-top: 16px;
        position: relative;
        
     }
@@ -183,7 +191,7 @@ body {
   .banner-conversion {
     width: 246px;
     height: 26px;
-    background-color: $colordark;
+    background-color: $color;
     color: #fff;
     padding-top: 5px;
     font-size: 16px;
@@ -220,6 +228,7 @@ body {
   h1 {
     margin-top: 55px;
     color: $colortext;
+    font-size: 35px;
   }
 
   @media (max-width: 800px) {
@@ -235,6 +244,11 @@ body {
 
 .whatyouget-image {
   padding: 30px;
+  max-height: 600px;
+  max-width: 600px;
+  img {
+    margin-left: 1vw;
+  }
 }
 
 .whatyouget-list {
@@ -270,6 +284,7 @@ body {
   h1 {
     margin-top: 55px;
     color: $colortext;
+    font-size: 35px;
   }
 
   @media (max-width: 800px) {
@@ -288,16 +303,28 @@ body {
 .prepare-text {
   background-color:$colortextblock ;
   min-height: 134px;
+  max-width: 820px;
+  margin-left: 6vw;
+  margin-right: 1vw;
   color: $colortext;
   text-align: left;
   padding: 15px;
-  margin-top: 0px;
+  
 }
+.prepare-image {
+    max-width: 600px;
+    max-height: 600px; 
+    img {
+      margin-left: 1vw;
+    }
+}
+
 
 @media (max-width: 800px) {
   .prepare-text {
     margin-top: -80px;
     font-size: 12px;
+    margin-left: 0;
   }
 }
 
@@ -313,6 +340,7 @@ body {
   background-color: $colortextblock;
   h1 {
     margin-top: 55px;
+    font-size: 35px;
   }
 
   @media (max-width: 800px) {
@@ -332,6 +360,7 @@ body {
   background-color: #fff;
   h1 {
     margin-top: 55px;
+    font-size: 35px;
     
   }
 
@@ -350,14 +379,17 @@ body {
 }
 
 .result-image {
-  margin-left: 10px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  max-height: 150px;
+  
 }
 
 .result-text {
   background-color: $colortextblock;
   min-height: 134px;
   text-align: left;
-  margin-top: 0px;
+  margin-top: 70px;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 10px;
@@ -569,6 +601,7 @@ body {
 
   h1 {
     color: #fff;
+    font-size: 35px;
     margin-top: 45px;
     text-transform: uppercase;
   }
@@ -650,8 +683,9 @@ body {
 
 .copy {
   margin-top: 0;
+  padding: 20px;
   min-height: 61px;
-  background-color:#000000;
+  background-color: $color;
   h5 {
     color: #fff;
     margin-top: 15px;

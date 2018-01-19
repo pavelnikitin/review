@@ -10,10 +10,11 @@ const durationFn = function(deltaTop) {
 const Menu = styled.div`
   position: fixed;
   z-index: 2000;
-  width: 100%;
+  width: 103%;
   background-color: #fff;
   ul {
     padding: 0;
+    margin-top: 10px;
   }
   li {
     display: inline;
@@ -22,7 +23,7 @@ const Menu = styled.div`
     margin-left: 30px;
   }
   
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     padding: 10px 0;
     li {
       padding: 10px 0;
@@ -102,10 +103,10 @@ componentWillUnmount() {
           menuCloseButton={<div className="closebutton"></div>}
           changeMenuOn="800px"
           menu={
-            <Menu className="row">
+            <Menu>
               <ul>
                 <li>
-                <Link activeClass="active" className="test1" to="_0" spy={true} smooth={true} duration={500} ><i className="ion-ios-home"/></Link>
+                <Link activeClass="active" className="test1" to="home" spy={true} smooth={true} duration={500} offset={-160}><i className="ion-ios-home"/></Link>
                 </li>
                 <li>
                 <Link activeClass="active" className="test1" to="_1" spy={true} smooth={true} duration={500} >Услуги</Link>
