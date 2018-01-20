@@ -7,35 +7,6 @@ const durationFn = function(deltaTop) {
     return deltaTop;
 };
 
-const Menu = styled.div`
-  position: fixed;
-  z-index: 2000;
-  width: 103%;
-  background-color: #fff;
-  ul {
-    padding: 0;
-    margin-top: 10px;
-  }
-  li {
-    display: inline;
-    font-size: 13px;
-    list-style-type: none;
-    margin-left: 30px;
-  }
-  
-  @media (max-width: 800px) {
-    padding: 10px 0;
-    li {
-      padding: 10px 0;
-      display: block;
-      margin-left: 0;
-    }
-  }
-`;
-
-
-
-
 
 export default class MyNavbar extends Component {
 
@@ -97,13 +68,12 @@ componentWillUnmount() {
 
     render() {
         return (
-            <div>
             <ResponsiveMenu
           menuOpenButton={<div className="openbutton"><i className="ion-navicon-round"/></div>}
           menuCloseButton={<div className="closebutton"></div>}
           changeMenuOn="800px"
           menu={
-            <Menu>
+            <div className="mymenu">
               <ul>
                 <li>
                 <Link activeClass="active" className="test1" to="home" spy={true} smooth={true} duration={500} offset={-160}><i className="ion-ios-home"/></Link>
@@ -124,10 +94,10 @@ componentWillUnmount() {
                 <Link activeClass="active" className="test1" to="_6" spy={true} smooth={true} duration={500} >Обратная связь</Link>
                 </li>
               </ul>
-            </Menu>
+            </div>
           }
         />
-            </div>
+          
         )
     }
 }

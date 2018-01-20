@@ -1,3 +1,4 @@
+@import "aos";
 @import "variables";
 @import "carousel";
 @import "contactform";
@@ -44,7 +45,7 @@ body {
    .topheader {
      height: 50px;
      position: fixed;
-     width: 103%;
+     width: 100vw;
      top: 0;
      z-index: 2002;
      background-color: #fff;
@@ -446,7 +447,7 @@ body {
 }
 
 .region {
-  height: 50px;
+  min-height: 50px;
   padding-top: 8px;
   margin-top: 30px;
   border-top: 0.5px dashed $colortext;

@@ -7,15 +7,15 @@ import './../scss/index.scss'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Fotogallery"
+      title="SEOlanding"
       meta={[
-        { name: 'description', content: 'Отзывы' },
-        { name: 'keywords', content: 'Отзывы' },
+        { name: 'description', content: 'Одностраничный сайт' },
+        { name: 'keywords', content: 'Landing page, Продвижение сайта, Портфолио' },
       ]}
     />
 
     <div>
-    <div className="row topheader">
+    <div className="topheader">
      <MyNavbar/>
     </div>
       <div className="row header">

@@ -23,6 +23,17 @@ class IndexPage extends React.Component {
     
   }
 
+  componentDidMount() {
+    const isBrowser = typeof window !== 'undefined';
+    const AOS = isBrowser ? require('aos') : undefined;
+    this.aos = AOS
+    this.aos.init()
+}
+
+componentDidUpdate() {
+    this.aos.refresh()
+}
+
  
 
 
@@ -52,12 +63,12 @@ class IndexPage extends React.Component {
           </div>
           <div className="container-fluid">
             <div className="row whatyouget-description">
-              <div className="col-xs-5 whatyouget-image">
+              <div  className="col-xs-5 whatyouget-image" data-aos="fade-right"  data-aos-easing="ease-in-sine" data-aos-duration="600">
                 <img src={advantage} alt="" className="img-responsive" />
               </div>
               <div className="col-xs-7   whatyouget-list">
                 <h6>
-                  <div className="whatyouget-text center-block">
+                  <div className="whatyouget-text center-block" data-aos="fade-left"  data-aos-easing="ease-in-sine" data-aos-duration="600">
                   <p><br />➢&nbsp;ЭКСПРЕСС-АНАЛИЗ SEO ОПТИМИЗАЦИИ САЙТА;<br /></p>
                   <p>➢&nbsp;ЭКСПРЕСС-АНАЛИЗ КОНТЕКСТНОЙ РЕКЛАМЫ;<br /></p>
                   <p>➢&nbsp;ПЕРВИЧНЫЙ АНАЛИЗ ЮЗАБИЛИТИ;<br /></p>
@@ -76,11 +87,11 @@ class IndexPage extends React.Component {
           </div>
           <div className="container-fluid">
             <div className="row prepare-description">
-              <div className="col-xs-6 prepare-image">
+              <div className="col-xs-6 prepare-image" data-aos="fade-right"  data-aos-easing="ease-in-sine" data-aos-duration="600">
                 <img src={phone} alt="" className="img-responsive" />
               </div>
               <div className="col-xs-6  prepare-description">
-                <div className="prepare-text">
+                <div className="prepare-text" data-aos="fade-left"  data-aos-easing="ease-in-sine" data-aos-duration="600">
                   <span>Наши отзывы готовит группа сотрудников с различным стилем речи и написания текста. Все тексты отзывов создаются индивидуально для каждого проекта с уникальностью не менее 95%. Именно такие тексты вызывают доверие других пользователей.</span>
                 </div>
               </div>
@@ -106,10 +117,10 @@ class IndexPage extends React.Component {
           </div>
           <div className="container-fluid">
             <div className="row result-description">
-              <div className="col-xs-2">
+              <div className="col-xs-2" data-aos="fade-down-right"  data-aos-easing="ease-in-sine" data-aos-duration="600">
                 <img src={resultimage} alt="image" className="img-responsive img-circle result-image" />
               </div>
-              <div className="col-xs-10 result-text">
+              <div className="col-xs-10 result-text" data-aos="fade-up-left"  data-aos-easing="ease-in-sine" data-aos-duration="600">
                 <span>
                   <p>Раньше никто в нашей компании не знал, что есть люди, у которых можно заказать видео отзыв. Обходились
                                 своими силами. Мы тогда уже заметили, что наличие такого отзыва повышает интерес к сайту.</p>
@@ -139,7 +150,7 @@ class IndexPage extends React.Component {
                 <div className="row">
                   <div className="col-xs-12 col-sm-4">
                     <div className="row">
-                      <div className="beginner col-xs-8 col-xs-push-2 text-center">
+                      <div className="beginner col-xs-8 col-xs-push-2 text-center" data-aos="flip-left"  data-aos-easing="ease-in-sine" data-aos-duration="600" >
                         <h3>«НАЧАЛЬНЫЙ»</h3>
                         <h2>
                           <span className="colorheader">10 000 </span> руб</h2>
@@ -157,7 +168,7 @@ class IndexPage extends React.Component {
                   </div>
                   <div className="col-xs-12 col-sm-4">
                     <div className="row">
-                      <div className="standart col-xs-8 col-xs-push-2 text-center">
+                      <div className="standart col-xs-8 col-xs-push-2 text-center" data-aos="flip-left"  data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-delay="300">
                         <h3>«СТАНДАРТНЫЙ»</h3>
                         <h2>
                           <span className="colorheader">17 000 </span>руб</h2>
@@ -175,7 +186,7 @@ class IndexPage extends React.Component {
                   </div>
                   <div className="col-xs-12 col-sm-4">
                     <div className="row">
-                      <div className="premium col-xs-8 col-xs-push-2 text-center">
+                      <div className="premium col-xs-8 col-xs-push-2 text-center" data-aos="flip-left"  data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-delay="600">
                         <h3>«ПРЕМИУМ»</h3>
                         <h2>
                           <span className="colorheader">30 000</span> руб</h2>
@@ -196,7 +207,7 @@ class IndexPage extends React.Component {
                   <h5 className="refinement">*окончательные цены зависят от Ваших конкретных требований</h5>
                 </div>
                 <div className="row">
-                  <div className="video col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-3">
+                  <div className="video col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-3" data-aos="zoom-in"  data-aos-easing="ease-in-sine" data-aos-duration="600">
                     <img src={newpng} alt="logo" className="img-responsive" />
                     <h3>10 ВИДЕО ОТЗЫВОВ</h3>
                     <h2>
