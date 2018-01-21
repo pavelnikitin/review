@@ -10,6 +10,8 @@ import telefon from '../img/telefon.png'
 import gmail from '../img/gmail.png'
 import ContactForm from '../components/contactform'
 import MyModal from '../components/mymodal'
+import MyCalc from '../components/mycalc'
+
 
 
 
@@ -226,6 +228,9 @@ componentDidUpdate() {
 
             </div>
           </div>
+        </div>
+        <div className="row mycalc">
+        <MyCalc/>
         </div>
         <div className="row contacts text-center" id="_6">
             <div className="contacts-overlay">

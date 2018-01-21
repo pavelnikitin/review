@@ -6,6 +6,8 @@
 @import "rc-notification";
 @import "rc-notification";
 @import "mynavbar";
+@import "mycalc";
+
 
 
 html {
@@ -693,6 +695,10 @@ body {
   }
 }
 
+.mycalc {
+  min-height: 500px;
+  background-color: rgb(104, 94, 94);
+}
 
 
 
