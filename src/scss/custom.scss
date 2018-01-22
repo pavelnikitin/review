@@ -589,7 +589,6 @@ body {
 
 .contacts {
   min-height: 413px;
-  margin-top: 55px;
   background-image: url(../img/footer.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -695,9 +694,10 @@ body {
   }
 }
 
-.mycalc {
-  min-height: 500px;
-  background-color: rgb(104, 94, 94);
+.calculation {
+  min-height: 400px;
+  background-color: #fff;
+  margin-top: 55px;
 }
 
 
